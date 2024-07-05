@@ -22,7 +22,7 @@ export default ProductPage;
 // Dipanggil setiap melakukan request
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch('http://localhost:3000/api/product');
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product`);
   const response = await res.json();
 
   return {
